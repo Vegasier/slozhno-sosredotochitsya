@@ -9,4 +9,91 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --bg-color: #000028;
+  --accent-color: #ff0070;
+  --title-color: #DB00FF;
+  --text-color: #F1B2CE;
+}
+
+.page {
+  background-image: url('../images/cover-image-dark.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.a__dark {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.header__theme-menu-list {
+  color: var(--accent-color);
+}
+
+.rec {
+  position: absolute;
+}
+
+.rec__text {
+  color: var(--accent-color);
+  font-size: 18px;
+  margin-inline-start: 923px;
+}
+
+.rec__text::after {
+  position: absolute;
+  content: '';
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px;
+  margin-inline-start: 10px;
+  margin-block-start: 7px;
+}
+
+.rec__top-right {
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  margin-inline-start: 959px;
+}
+
+.rec__bot-left {
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+  margin-block-start: 680px;
+}
+
+.header__title__dark {
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.h2__text__dark {
+  color: var(--accent-color);
+}
+
+.h3__text__dark {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.h4__text__dark {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.containers__text__dark {
+  color: var(--text-color);
+}
+
+.footer__text {
+  color: var(--title-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
