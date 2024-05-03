@@ -7,14 +7,16 @@
 .header {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  margin-block-end: 70px;
 }
 
 .header__theme-menu-list {
-  max-width: 230px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 23px;
   font-size: 18px;
-  margin: 0 385px;
 }
 
 .header__title {
@@ -22,19 +24,20 @@
   margin-block-start: 239px;
   margin-block-end: 74px;
   margin-inline-start: -20px;
+  text-shadow: 4px 4px 0 #FF0070;
 }
 
 .container-header__text {
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: end;
+  margin-block-end: 127px;
 }
 
 .header__text {
-  max-width: 491px;
-  min-height: 70px;
-  word-spacing: 1px;
-  margin-block-end: 195px;
   font-size: 18px;
+  word-spacing: 1px;
+  max-inline-size: 491px;
 }
 
 .section__why {
@@ -55,7 +58,6 @@
 
 .h3__text {
   font-size: 18px;
-  max-inline-size: 984px;
 }
 
 .h4__text {
@@ -69,78 +71,47 @@
   margin-block-start: 10px;
 }
 
+.a {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
 .section__what {
   display: grid;
   grid-template-columns: repeat(3, minmax(315px, 728px));
+  grid-template-rows: fit-content(70px) 1fr;
   gap: 20px;
-  grid-template-areas: 
-  'h2-text . .'
-  'multitasks food gadjets';
   margin-block-end: 87px;
 }
 
-.container__what__h2 {
-  grid-area: h2-text;
-}
-
-.what-multitasks {
-  grid-area: multitasks;
-}
-
-.what-food {
-  grid-area: food;
-}
-
+.what-multitasks,
+.what-food,
 .what-gadjets {
-  grid-area: gadjets;
+  grid-row-start: 2;
 }
 
 .section__how {
   display: grid;
-  grid-template-columns: fit-content(315px) minmax(355px, 648px);
+  grid-template-columns: 1fr minmax(355px, 648px);
   gap: 22px;
   margin-block-end: 85px;
-  grid-template-areas: 
-  'h2-text h3-text'
-  '. sky'
-  '. music'
-  '. walk'
-  '. eat'
-  '. read';
+}
+
+.container__how__h3,
+.how-sky,
+.how-music,
+.how-walk,
+.how-eat,
+.how-read {
+  grid-column-start: 2;
 }
 
 .container__how__h2 {
-  grid-area: h2-text;
   max-height: 23px;
-}
-
-.container__how__h3 {
-  grid-area: h3-text;
-}
-
-.how-sky {
-  grid-area: sky;
-}
-
-.how-music {
-  grid-area: music;
-}
-
-.how-walk {
-  grid-area: walk;
-}
-
-.how-eat {
-  grid-area: eat;
-}
-
-.how-read {
-  grid-area: read;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, fit-content(315px));
+  grid-template-columns: repeat(3, minmax(min-content, max-content));;
   grid-template-areas:
   'sunset sunset icecream'
   'tape books icecream'
@@ -152,7 +123,6 @@
 .img-sunset {
   grid-area: sunset;
   max-inline-size: 649px;
-  object-fit: cover;
 }
 
 .img-icecream {
@@ -160,7 +130,6 @@
   max-inline-size: 315px;
   max-block-size: 595px;
   block-size: 100%;
-  object-fit: cover;
 }
 
 .img-tape {
@@ -168,20 +137,26 @@
   max-inline-size: 315px;
   max-block-size: 768px;
   block-size: 100%;
-  object-fit: cover;
 }
 
 .img-books {
   grid-area: books;
   max-inline-size: 315px;
-  object-fit: cover;
 }
 
 .img-street {
   grid-area: street;
   max-inline-size: 649px;
   inline-size: 100%;
+}
+
+.img-sunset,
+.img-icecream,
+.img-tape,
+.img-books,
+.img-street {
   object-fit: cover;
+  object-position: center;
 }
 
 .footer {
@@ -194,21 +169,23 @@
   text-align: center;
   padding: 319px 276px;
   margin-inline-start: -20px;
+  text-shadow: 2px 2px 0 #FF0070;
 }
 
-.rec__footer-top-right {
-  inline-size: 25px;
-  block-size: 25px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
-  margin-inline-start: 959px;
-  margin-block-start: 54px;
-}
-
-.rec__footer-bot-left {
-  inline-size: 25px;
-  block-size: 25px;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
-  margin-block-start: 680px;
+@media (max-width: 768px) {
+  .header__theme-menu-list {
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-end;
+    margin-block-start: 193px;
+  }
+  .header__title {
+    margin-block-start: 173px;
+  }
+  .header__text {
+    max-inline-size: 364px;
+  }
+  .section__what {
+    grid-template-columns: min-content;
+  }
 }

@@ -37,8 +37,6 @@ picture {
 
 button,
 a {
-  position: relative;
-  z-index: 1;
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
