@@ -85,7 +85,7 @@ a:focus {
 .decorated-zone::after { 
   border-block-end: 1px solid var(--accent-color); 
   border-inline-start: 1px solid var(--accent-color); 
-  bottom: 10px; 
+  bottom: 40px; 
 }
 
 .header__title {

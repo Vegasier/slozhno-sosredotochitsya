@@ -15,3 +15,11 @@
   --text-color: #353430;
   background: url('../images/cover-image-light.png') fixed center/cover no-repeat;
 }
+
+.page.theme_light .decorated-zone::before, 
+.page.theme_light .decorated-zone::after,
+.page.theme_light .rec__text,
+.page.theme_light .footer::before, 
+.page.theme_light .footer::after { 
+  display: none; 
+}
