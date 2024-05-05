@@ -2,7 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background: url('../images/cover-image-dark.png') fixed center/cover no-repeat;
+  padding: 20px;
 }
 
 .header {
@@ -12,24 +12,24 @@
   min-block-size: 768px;
 }
 
-.decorated-zone { 
-  position: relative; 
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  right: 1px;
 } 
- 
-.decorated-zone::before, 
-.decorated-zone::after { 
-  content: ""; 
-  position: absolute; 
-  width: 25px; 
-  height: 25px; 
-} 
- 
-.decorated-zone::before { 
-  right: 1px; 
-} 
- 
-.decorated-zone::after { 
-  bottom: 40px; 
+
+.decorated-zone::after {
+  bottom: 40px;
 }
 
 .header__theme-menu-list {
@@ -39,13 +39,13 @@
   font-size: 18px;
 }
 
-.header__theme-menu-button:focus { 
-  outline: none; 
-} 
- 
-.header__theme-menu-button_active { 
-  pointer-events: none; 
-} 
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
 
 .header__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -198,23 +198,24 @@
 .footer {
   position: relative;
   margin-block-start: 25px;
+  block-size: 100%;
 }
 
-.footer::before, 
-.footer::after { 
-  content: ""; 
-  position: absolute; 
-  width: 25px; 
-  height: 25px; 
+.footer::before,
+.footer::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
 }
 
-.footer::before { 
+.footer::before {
   top: 54px;
-  right: 1px; 
+  right: 1px;
 }
 
-.footer::after { 
-  bottom: 60px; 
+.footer::after {
+  bottom: 60px;
 }
 
 .footer__text {
@@ -228,74 +229,95 @@
   .header {
     min-block-size: 1024px;
   }
+  
   .header__theme-menu-list {
     flex-direction: column;
     gap: 11px;
     align-items: flex-end;
     margin-block-start: 172px;
   }
+  
   .header__title {
     margin-block-start: 145px;
     margin-block-end: 136px;
   }
+  
   .header__text {
     max-inline-size: 364px;
   }
+  
   .section__why {
     grid-template-columns: 1fr fit-content(472px);
     gap: 27px;
     margin-block-end: 84px;
   }
+  
   .section__what {
     gap: 22px;
-    margin-block-end: 52px;
+    margin-block-end: 82px;
   }
+  
   .container__what__h2 {
     max-inline-size: 236px;
   }
+  
   .what-multitasks,
   .what-food,
   .what-gadjets {
     grid-row-start: auto;
   }
+  
   .section__how {
     grid-template-columns: 1fr fit-content(472px);
     min-block-size: 1296px;
-    margin-block-end: 50px;
+    margin-block-end: 80px;
   }
+  
   .img-sunset {
     max-inline-size: 479px;
   }
+  
   .img-icecream {
     max-inline-size: 229px;
     max-block-size: 441px;
   }
+  
   .img-tape {
     max-inline-size: 229px;
     max-block-size: 568px;
   }
+  
   .img-books {
     max-inline-size: 230px;
   }
+  
   .img-street {
     max-inline-size: 479px;
   }
+  
   .footer::after {
     bottom: 52px;
   }
+  
   .footer__text {
     padding: 468px 185px;
   }
 }
 
 @media (max-width: 375px) {
+  .page {
+    padding: 10px;
+  }
+  
   .header {
     min-block-size: 668px;
     margin-block-end: 10px;
   }
+  
   .header__theme-menu-list {
     margin-block-start: 65px;
   }
+  
   .header__title {
     margin-block-start: 65px;
     margin-block-end: 56px;
@@ -303,35 +325,44 @@
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     line-height: 96px;
   }
+  
   .container-header__text {
     justify-content: center;
     margin-block-end: 98px;
   }
+  
   .header__text {
     min-inline-size: 355px;
   }
+  
   .section__why {
     grid-template-columns: fit-content(355px);
     gap: 25px;
     margin-block-end: 55px;
   }
+  
   .section__what {
     gap: 25px;
   }
+  
   .why-multitasks,
   .why-dofamin {
     grid-column-start: 1;
   }
+  
   .container__what__h2 {
     max-inline-size: 355px;
   }
+  
   .section__how {
     grid-template-columns: fit-content(355px);
     gap: 24px;
   }
+  
   .container__how__h2 {
     max-block-size: 70px;
   }
+  
   .container__how__h3,
   .how-sky,
   .how-music,
@@ -340,16 +371,18 @@
   .how-read {
     grid-column-start: 1;
   }
+  
   .gallery {
     grid-template-areas:
-  'gallery__title'
-  'sunset'
-  'icecream'
-  'tape'
-  'books'
-  'street';
+    'gallery__title'
+    'sunset'
+    'icecream'
+    'tape'
+    'books'
+    'street';
     gap: 10px;
   }
+  
   .gallery__h3__text,
   .img-sunset,
   .img-icecream,
@@ -359,12 +392,15 @@
     max-inline-size: 355px;
     inline-size: 100%;
   }
+  
   .footer::before {
     top: 29px;
   }
+  
   .footer::after {
     bottom: 32px;
   }
+  
   .footer__text {
     padding: 276px 0;
   }

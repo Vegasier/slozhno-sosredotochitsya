@@ -35,13 +35,13 @@ a:focus {
 .header__theme-menu-button:hover {
   outline: 1px solid var(--hover-color);
 }
- 
-.header__theme-menu-button_active { 
-  outline: 1px solid var(--button-color); 
-} 
- 
-.header__theme-menu-button:focus-visible { 
-  border-block-end: 1px solid var(--button-color); 
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--button-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--button-color);
 }
 
 .rec__text {
@@ -62,14 +62,14 @@ a:focus {
   margin-inline-start: 10px;
   margin-block-start: 7px;
 }
- 
-.decorated-zone::before { 
-  border-block-start: 1px solid var(--rectangle-color); 
-  border-inline-end: 1px solid var(--rectangle-color); 
-} 
- 
-.decorated-zone::after { 
-  border-block-end: 1px solid var(--rectangle-color); 
+
+.decorated-zone::before {
+  border-block-start: 1px solid var(--rectangle-color);
+  border-inline-end: 1px solid var(--rectangle-color);
+}
+
+.decorated-zone::after {
+  border-block-end: 1px solid var(--rectangle-color);
   border-inline-start: 1px solid var(--rectangle-color);
 }
 
@@ -98,13 +98,29 @@ a:focus {
 .footer__text {
   color: var(--h1-color);
 }
- 
-.footer::before { 
-  border-block-start: 1px solid var(--rectangle-color); 
+
+.footer::before {
+  border-block-start: 1px solid var(--rectangle-color);
   border-inline-end: 1px solid var(--rectangle-color);
-} 
- 
-.footer::after { 
-  border-block-end: 1px solid var(--rectangle-color); 
-  border-inline-start: 1px solid var(--rectangle-color); 
+}
+
+.footer::after {
+  border-block-end: 1px solid var(--rectangle-color);
+  border-inline-start: 1px solid var(--rectangle-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --h1-color: #DB00FF;
+    --h2-color: #ff0070;
+    --title-color: #000028;
+    --text-color: #F1B2CE;
+    --button-color: #ff0070;
+    --rectangle-color: #ff0070;
+    --accent-color: #ff0070;
+    --hover-color: rgba(255, 0, 112, 0.4);
+  }
+  .page {
+    background: url('../images/cover-image-dark.png') fixed center/cover no-repeat;
+  }
 }

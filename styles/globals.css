@@ -10,7 +10,6 @@ body {
   min-inline-size: 375px;
   max-inline-size: 1024px;
   margin: 0 auto;
-  padding: 20px;
   font-family: 'IBM Plex mono', sans-serif;
 }
 
@@ -49,10 +48,4 @@ a {
 
 button {
   inline-size: 70px;
-}
-
-@media (max-width: 375px) {
-  body {
-    padding: 10px;
-  }
 }
