@@ -97,9 +97,8 @@
 .section__why {
   display: grid;
   grid-template-columns: 1fr fit-content(649px);
-  gap: 20px;
-  min-block-size: 508px;
-  margin-block-end: 78px;
+  gap: 25px;
+  margin-block-end: 85px;
 }
 
 .why-dofamin {
@@ -110,8 +109,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(315px, 728px));
   gap: 20px;
-  min-block-size: 498px;
-  margin-block-end: 82px;
+  margin-block-end: 85px;
 }
 
 .what-multitasks,
@@ -125,8 +123,7 @@
   display: grid;
   grid-template-columns: 1fr fit-content(648px);
   gap: 22px;
-  min-block-size: 1015px;
-  margin-block-end: 80px;
+  margin-block-end: 85px;
 }
 
 .container__how__h3,
@@ -198,7 +195,7 @@
 .footer {
   position: relative;
   margin-block-start: 25px;
-  block-size: 100%;
+  min-block-size: 768px;
 }
 
 .footer::before,
@@ -254,7 +251,7 @@
   
   .section__what {
     gap: 22px;
-    margin-block-end: 82px;
+    margin-block-end: 84px;
   }
   
   .container__what__h2 {
@@ -269,8 +266,8 @@
   
   .section__how {
     grid-template-columns: 1fr fit-content(472px);
-    min-block-size: 1296px;
-    margin-block-end: 80px;
+    margin-block-end: 83px;
+    gap: 23px;
   }
   
   .img-sunset {
@@ -295,6 +292,10 @@
     max-inline-size: 479px;
   }
   
+  .footer {
+    min-block-size: 1024px;
+  }
+
   .footer::after {
     bottom: 52px;
   }
@@ -311,7 +312,7 @@
   
   .header {
     min-block-size: 668px;
-    margin-block-end: 10px;
+    margin-block-end: 8px;
   }
   
   .header__theme-menu-list {
@@ -343,6 +344,7 @@
   
   .section__what {
     gap: 25px;
+    margin-block-end: 52px;
   }
   
   .why-multitasks,
@@ -357,6 +359,7 @@
   .section__how {
     grid-template-columns: fit-content(355px);
     gap: 24px;
+    margin-block-end: 55px;
   }
   
   .container__how__h2 {
@@ -393,6 +396,10 @@
     inline-size: 100%;
   }
   
+  .footer {
+    min-block-size: 668px;
+  }
+
   .footer::before {
     top: 29px;
   }
