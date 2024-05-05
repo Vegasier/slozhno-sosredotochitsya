@@ -9,10 +9,14 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --bg-color: #000028;
-  --accent-color: #ff0070;
-  --title-color: #DB00FF;
+  --h1-color: #DB00FF;
+  --h2-color: #ff0070;
+  --title-color: #000028;
   --text-color: #F1B2CE;
+  --button-color: #ff0070;
+  --rectangle-color: #ff0070;
+  --accent-color: #ff0070;
+  --hover-color: rgba(255, 0, 112, 0.4);
   background: url('../images/cover-image-dark.png') fixed center/cover no-repeat;
 }
 
@@ -25,24 +29,19 @@ a:focus {
 }
 
 .header__theme-menu-list {
-  color: var(--accent-color);
+  color: var(--button-color);
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 0.4);
+  outline: 1px solid var(--hover-color);
 }
-
-.header__theme-menu-button:focus { 
-  outline: none; 
-} 
  
 .header__theme-menu-button_active { 
-  outline: 1px solid var(--accent-color); 
-  pointer-events: none; 
+  outline: 1px solid var(--button-color); 
 } 
  
 .header__theme-menu-button:focus-visible { 
-  border-block-end: 1px solid var(--accent-color); 
+  border-block-end: 1px solid var(--button-color); 
 }
 
 .rec__text {
@@ -63,47 +62,33 @@ a:focus {
   margin-inline-start: 10px;
   margin-block-start: 7px;
 }
-
-.decorated-zone { 
-  position: relative; 
-} 
- 
-.decorated-zone::before, 
-.decorated-zone::after { 
-  content: ""; 
-  position: absolute; 
-  width: 25px; 
-  height: 25px; 
-} 
  
 .decorated-zone::before { 
-  border-block-start: 1px solid var(--accent-color); 
-  border-inline-end: 1px solid var(--accent-color); 
-  right: 1px; 
+  border-block-start: 1px solid var(--rectangle-color); 
+  border-inline-end: 1px solid var(--rectangle-color); 
 } 
  
 .decorated-zone::after { 
-  border-block-end: 1px solid var(--accent-color); 
-  border-inline-start: 1px solid var(--accent-color); 
-  bottom: 40px; 
+  border-block-end: 1px solid var(--rectangle-color); 
+  border-inline-start: 1px solid var(--rectangle-color);
 }
 
 .header__title {
-  color: var(--title-color);
+  color: var(--h1-color);
 }
 
 .h2__text {
-  color: var(--accent-color);
+  color: var(--h2-color);
 }
 
 .h3__text {
   background-color: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--title-color);
 }
 
 .h4__text {
   background-color: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--title-color);
 }
 
 .containers__text {
@@ -111,30 +96,15 @@ a:focus {
 }
 
 .footer__text {
-  color: var(--title-color);
+  color: var(--h1-color);
 }
-
-.footer { 
-  position: relative; 
-} 
- 
-.footer::before, 
-.footer::after { 
-  content: ""; 
-  position: absolute; 
-  width: 25px; 
-  height: 25px; 
-} 
  
 .footer::before { 
-  border-block-start: 1px solid var(--accent-color); 
-  border-inline-end: 1px solid var(--accent-color); 
-  top: 54px;
-  right: 1px; 
+  border-block-start: 1px solid var(--rectangle-color); 
+  border-inline-end: 1px solid var(--rectangle-color);
 } 
  
 .footer::after { 
-  border-block-end: 1px solid var(--accent-color); 
-  border-inline-start: 1px solid var(--accent-color); 
-  bottom: 60px; 
+  border-block-end: 1px solid var(--rectangle-color); 
+  border-inline-start: 1px solid var(--rectangle-color); 
 }

@@ -46,3 +46,13 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+
+button {
+  inline-size: 70px;
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 10px;
+  }
+}

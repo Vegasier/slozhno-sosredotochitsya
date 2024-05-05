@@ -3,38 +3,12 @@
   и их переопределение под различные устройства
 */
 :root {
-  --bg-color: #000028;
-  --accent-color: #ff0070;
-  --title-color: #DB00FF;
+  --h1-color: #DB00FF;
+  --h2-color: #ff0070;
+  --title-color: #000028;
   --text-color: #F1B2CE;
-}
-
-.header__theme-menu-list {
-  color: var(--accent-color);
-}
-
-.header__title {
-  color: var(--title-color);
-}
-
-.h2__text {
-  color: var(--accent-color);
-}
-
-.h3__text {
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-}
-
-.h4__text {
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-}
-
-.containers__text {
-  color: var(--text-color);
-}
-
-.footer__text {
-  color: var(--title-color);
+  --button-color: #ff0070;
+  --rectangle-color: #ff0070;
+  --accent-color: #ff0070;
+  --hover-color: rgba(255, 0, 112, 0.4);
 }
