@@ -20,7 +20,7 @@
   background: url('../images/cover-image-light.png') fixed center/cover no-repeat;
 }
 
-.page.theme_light .rec__text {
+.page.theme_light .header__rec {
   display: none;
 }
 
@@ -38,7 +38,7 @@
   .page {
     background: url('../images/cover-image-light.png') fixed center/cover no-repeat;
   }
-  .rec__text {
+  .header__rec {
     display: none;
   }
 }

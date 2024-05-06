@@ -44,14 +44,14 @@ a:focus {
   border-block-end: 1px solid var(--button-color);
 }
 
-.rec__text {
+.header__rec {
   position: absolute;
   color: var(--accent-color);
   font-size: 18px;
   right: 30px;
 }
 
-.rec__text::after {
+.header__rec::after {
   position: absolute;
   content: '';
   inline-size: 9px;
@@ -77,25 +77,25 @@ a:focus {
   color: var(--h1-color);
 }
 
-.h2__text {
+.h2-text {
   color: var(--h2-color);
 }
 
-.h3__text {
+.h3-text {
   background-color: var(--accent-color);
   color: var(--title-color);
 }
 
-.h4__text {
+.h4-text {
   background-color: var(--accent-color);
   color: var(--title-color);
 }
 
-.containers__text {
+.containers-text {
   color: var(--text-color);
 }
 
-.footer__text {
+.footer__title {
   color: var(--h1-color);
 }
 

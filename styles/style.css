@@ -3,6 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   padding: 20px;
+  margin: 0 auto;
 }
 
 .header {
@@ -10,6 +11,7 @@
   flex-direction: column;
   margin-block-end: 40px;
   min-block-size: 768px;
+  block-size: 100%;
 }
 
 .decorated-zone {
@@ -55,7 +57,7 @@
   text-shadow: 4px 4px 0 #FF0070;
 }
 
-.container-header__text {
+.header__container-text {
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
@@ -68,22 +70,22 @@
   max-inline-size: 491px;
 }
 
-.h2__text {
+.h2-text {
   font-size: 18px;
   font-weight: 700;
 }
 
-.h3__text {
+.h3-text {
   font-size: 18px;
   line-height: 23px;
 }
 
-.h4__text {
+.h4-text {
   font-size: 18px;
   font-weight: 400;
 }
 
-.containers__text {
+.containers-text {
   font-size: 18px;
   font-weight: 400;
   margin-block-start: 10px;
@@ -101,7 +103,7 @@
   margin-block-end: 85px;
 }
 
-.why-dofamin {
+.section__why_dofamin {
   grid-column-start: 2;
 }
 
@@ -112,9 +114,9 @@
   margin-block-end: 85px;
 }
 
-.what-multitasks,
-.what-food,
-.what-gadjets {
+.section__what_multitasks,
+.section__what_food,
+.section__what_gadjets {
   grid-row-start: 2;
   min-inline-size: 315px;
 }
@@ -126,23 +128,23 @@
   margin-block-end: 85px;
 }
 
-.container__how__h3,
-.how-sky,
-.how-music,
-.how-walk,
-.how-eat,
-.how-read {
-  grid-column-start: 2;
-}
-
-.container__how__h2 {
+.section__how_h2 {
   max-block-size: 23px;
 }
 
-.gallery {
+.section__how_h3,
+.section__how_sky,
+.section__how_music,
+.section__how_walk,
+.section__how_eat,
+.section__how_read {
+  grid-column-start: 2;
+}
+
+.section__gallery {
   display: grid;
   grid-template-areas:
-  'gallery__title gallery__title gallery__title'
+  'title title title'
   'sunset sunset icecream'
   'tape books icecream'
   'tape street street';
@@ -150,44 +152,44 @@
   margin-block-start: 20px;
 }
 
-.gallery__h3__text {
-  grid-area: gallery__title;
+.section__gallery_h3-text {
+  grid-area: title;
 }
 
-.img-sunset {
+.img_sunset {
   grid-area: sunset;
   max-inline-size: 649px;
 }
 
-.img-icecream {
+.img_icecream {
   grid-area: icecream;
   max-inline-size: 315px;
   max-block-size: 595px;
   block-size: 100%;
 }
 
-.img-tape {
+.img_tape {
   grid-area: tape;
   max-inline-size: 315px;
   max-block-size: 768px;
   block-size: 100%;
 }
 
-.img-books {
+.img_books {
   grid-area: books;
   max-inline-size: 315px;
 }
 
-.img-street {
+.img_street {
   grid-area: street;
   max-inline-size: 649px;
 }
 
-.img-sunset,
-.img-icecream,
-.img-tape,
-.img-books,
-.img-street {
+.img_sunset,
+.img_icecream,
+.img_tape,
+.img_books,
+.img_street {
   object-fit: cover;
   object-position: center;
 }
@@ -196,6 +198,7 @@
   position: relative;
   margin-block-start: 25px;
   min-block-size: 768px;
+  block-size: 100%;
 }
 
 .footer::before,
@@ -215,11 +218,15 @@
   bottom: 60px;
 }
 
-.footer__text {
+.footer__container_title {
+  display: flex;
+}
+
+.footer__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
-  padding: 319px 260px;
   text-shadow: 2px 2px 0 #FF0070;
+  margin: 319px auto;
 }
 
 @media (max-width: 768px) {
@@ -254,13 +261,13 @@
     margin-block-end: 84px;
   }
   
-  .container__what__h2 {
+  .section__what_h2 {
     max-inline-size: 236px;
   }
   
-  .what-multitasks,
-  .what-food,
-  .what-gadjets {
+  .section__what_multitasks,
+  .section__what_food,
+  .section__what_gadjets {
     grid-row-start: auto;
   }
   
@@ -270,25 +277,25 @@
     gap: 23px;
   }
   
-  .img-sunset {
+  .img_sunset {
     max-inline-size: 479px;
   }
   
-  .img-icecream {
+  .img_icecream {
     max-inline-size: 229px;
     max-block-size: 441px;
   }
   
-  .img-tape {
+  .img_tape {
     max-inline-size: 229px;
     max-block-size: 568px;
   }
   
-  .img-books {
+  .img_books {
     max-inline-size: 230px;
   }
   
-  .img-street {
+  .img_street {
     max-inline-size: 479px;
   }
   
@@ -300,8 +307,8 @@
     bottom: 52px;
   }
   
-  .footer__text {
-    padding: 468px 185px;
+  .footer__title {
+    margin: 467px auto;
   }
 }
 
@@ -327,7 +334,7 @@
     line-height: 96px;
   }
   
-  .container-header__text {
+  .header__container-text {
     justify-content: center;
     margin-block-end: 98px;
   }
@@ -347,12 +354,12 @@
     margin-block-end: 52px;
   }
   
-  .why-multitasks,
-  .why-dofamin {
+  .section__why_multitasks,
+  .section__why_dofamin {
     grid-column-start: 1;
   }
   
-  .container__what__h2 {
+  .section__what_h2 {
     max-inline-size: 355px;
   }
   
@@ -362,22 +369,22 @@
     margin-block-end: 55px;
   }
   
-  .container__how__h2 {
+  .section__how_h2 {
     max-block-size: 70px;
   }
   
-  .container__how__h3,
-  .how-sky,
-  .how-music,
-  .how-walk,
-  .how-eat,
-  .how-read {
+  .section__how_h3,
+  .section__how_sky,
+  .section__how_music,
+  .section__how_walk,
+  .section__how_eat,
+  .section__how_read {
     grid-column-start: 1;
   }
   
-  .gallery {
+  .section__gallery {
     grid-template-areas:
-    'gallery__title'
+    'title'
     'sunset'
     'icecream'
     'tape'
@@ -386,12 +393,12 @@
     gap: 10px;
   }
   
-  .gallery__h3__text,
-  .img-sunset,
-  .img-icecream,
-  .img-tape,
-  .img-books,
-  .img-street {
+  .section__gallery_h3-text,
+  .img_sunset,
+  .img_icecream,
+  .img_tape,
+  .img_books,
+  .img_street {
     max-inline-size: 355px;
     inline-size: 100%;
   }
@@ -408,7 +415,7 @@
     bottom: 32px;
   }
   
-  .footer__text {
-    padding: 276px 0;
+  .footer__title {
+    margin: 275px 0;
   }
 }
