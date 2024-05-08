@@ -9,15 +9,15 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --h1-color: #FFC2E6;
-  --h2-color: #353430;
-  --title-color: #353430;
-  --text-color: #353430;
+  --title-color: #FFC2E6;
+  --section-title-color: #353430;
+  --article-title-color: #353430;
+  --article-text-color: #353430;
   --button-color: #353430;
+  --button-hover-color: rgba(50, 49, 45, 0.4);
   --rectangle-color: #353430;
   --accent-color: #FF8DCB;
-  --hover-color: rgba(50, 49, 45, 0.4);
-  background: url('../images/cover-image-light.png') fixed center/cover no-repeat;
+  background: #FFF1F7 url('../images/cover-image-light.png') fixed center/cover no-repeat;
 }
 
 .page.theme_light .header__rec {
@@ -26,17 +26,17 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --h1-color: #FFC2E6;
-    --h2-color: #353430;
-    --title-color: #353430;
-    --text-color: #353430;
-    --button-color: #353430;
-    --rectangle-color: #353430;
-    --accent-color: #FF8DCB;
-    --hover-color: rgba(50, 49, 45, 0.4);
+  --title-color: #FFC2E6;
+  --section-title-color: #353430;
+  --article-title-color: #353430;
+  --article-text-color: #353430;
+  --button-color: #353430;
+  --button-hover-color: rgba(50, 49, 45, 0.4);
+  --rectangle-color: #353430;
+  --accent-color: #FF8DCB;
   }
   .page {
-    background: url('../images/cover-image-light.png') fixed center/cover no-repeat;
+    background: #FFF1F7 url('../images/cover-image-light.png') fixed center/cover no-repeat;
   }
   .header__rec {
     display: none;

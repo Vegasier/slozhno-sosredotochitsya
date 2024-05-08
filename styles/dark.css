@@ -9,23 +9,25 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --h1-color: #DB00FF;
-  --h2-color: #ff0070;
-  --title-color: #000028;
-  --text-color: #F1B2CE;
+  --title-color: #DB00FF;
+  --section-title-color: #ff0070;
+  --article-title-color: #000028;
+  --article-text-color: #F1B2CE;
   --button-color: #ff0070;
+  --button-hover-color: rgba(255, 0, 112, 0.4);
   --rectangle-color: #ff0070;
   --accent-color: #ff0070;
-  --hover-color: rgba(255, 0, 112, 0.4);
-  background: url('../images/cover-image-dark.png') fixed center/cover no-repeat;
+  background: #000028 url('../images/cover-image-dark.png') fixed center/cover no-repeat;
 }
 
-a:hover {
-  border-bottom: 1px solid var(--text-color);
+.decorated-zone::before {
+  border-block-start: 1px solid var(--rectangle-color);
+  border-inline-end: 1px solid var(--rectangle-color);
 }
 
-a:focus {
-  outline: 1px solid var(--text-color);
+.decorated-zone::after {
+  border-block-end: 1px solid var(--rectangle-color);
+  border-inline-start: 1px solid var(--rectangle-color);
 }
 
 .header__theme-menu-list {
@@ -33,7 +35,7 @@ a:focus {
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--hover-color);
+  outline: 1px solid var(--button-hover-color);
 }
 
 .header__theme-menu-button_active {
@@ -46,7 +48,7 @@ a:focus {
 
 .header__rec {
   position: absolute;
-  color: var(--accent-color);
+  color: var(--rectangle-color);
   font-size: 18px;
   right: 30px;
 }
@@ -63,64 +65,49 @@ a:focus {
   margin-block-start: 7px;
 }
 
-.decorated-zone::before {
-  border-block-start: 1px solid var(--rectangle-color);
-  border-inline-end: 1px solid var(--rectangle-color);
-}
-
-.decorated-zone::after {
-  border-block-end: 1px solid var(--rectangle-color);
-  border-inline-start: 1px solid var(--rectangle-color);
-}
-
 .header__title {
-  color: var(--h1-color);
-}
-
-.h2-text {
-  color: var(--h2-color);
-}
-
-.h3-text {
-  background-color: var(--accent-color);
   color: var(--title-color);
 }
 
-.h4-text {
+.header__text {
   background-color: var(--accent-color);
-  color: var(--title-color);
+  color: var(--article-title-color);
 }
 
-.containers-text {
-  color: var(--text-color);
+.section-title {
+  color: var(--section-title-color);
+}
+
+.article-title {
+  background-color: var(--accent-color);
+  color: var(--article-title-color);
+}
+
+.article-text {
+  color: var(--article-text-color);
+}
+
+/* В ревью написано, что свойства для ссылок должны лежать в style.css (конкретно 2 свойства ниже). 
+Однако я с этим не согласен, т.к. эти 2 свойства зависят именно от темы.
+Разве не такая логика должна быть?*/
+.a:hover {
+  border-bottom: 1px solid var(--article-text-color);
+}
+
+.a:focus-visible {
+  outline: 1px solid var(--article-text-color);
+}
+
+.caption {
+  background-color: var(--accent-color);
+  color: var(--article-title-color);
+}
+
+.section__gallery-title {
+  background-color: var(--accent-color);
+  color: var(--article-title-color)
 }
 
 .footer__title {
-  color: var(--h1-color);
-}
-
-.footer::before {
-  border-block-start: 1px solid var(--rectangle-color);
-  border-inline-end: 1px solid var(--rectangle-color);
-}
-
-.footer::after {
-  border-block-end: 1px solid var(--rectangle-color);
-  border-inline-start: 1px solid var(--rectangle-color);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --h1-color: #DB00FF;
-    --h2-color: #ff0070;
-    --title-color: #000028;
-    --text-color: #F1B2CE;
-    --button-color: #ff0070;
-    --rectangle-color: #ff0070;
-    --accent-color: #ff0070;
-    --hover-color: rgba(255, 0, 112, 0.4);
-  }
-  .page {
-    background: url('../images/cover-image-dark.png') fixed center/cover no-repeat;
-  }
+  color: var(--title-color);
 }
