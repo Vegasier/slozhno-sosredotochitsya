@@ -4,17 +4,14 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   padding: 20px;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  margin-block-end: 40px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
   min-block-size: 768px;
-  /* В задании не увидел обязательного требования, чтобы хедер и футер были равны высоте экрана.
-  Лишь рекомендации. */
-  max-block-size: 100vh;
+  block-size: 100vh;
+  margin-block-end: 40px;
 }
 
 .decorated-zone {
@@ -31,10 +28,14 @@
 
 .decorated-zone::before {
   right: 1px;
+  border-block-start: 1px solid var(--rectangle-color);
+  border-inline-end: 1px solid var(--rectangle-color);
 } 
 
 .decorated-zone::after {
   bottom: 40px;
+  border-block-end: 1px solid var(--rectangle-color);
+  border-inline-start: 1px solid var(--rectangle-color);
 }
 
 button {
@@ -46,46 +47,76 @@ button {
   justify-content: center;
   gap: 9px;
   font-size: 18px;
+  color: var(--button-color);
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-hover-color);
 }
 
 .header__theme-menu-button:focus {
   outline: none;
 }
 
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--button-color);
+}
+
 .header__theme-menu-button_active {
   pointer-events: none;
+  outline: 1px solid var(--button-color);
+}
+
+.header__rec {
+  position: absolute;
+  right: 30px;
+  color: var(--rectangle-color);
+  font-size: 18px;
+}
+
+.header__rec::after {
+  position: absolute;
+  content: '';
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px;
+  margin-inline-start: 10px;
+  margin-block-start: 7px;
 }
 
 .header__title {
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  margin-block-start: 239px;
-  margin-block-end: 76px;
+  margin-bottom: 33px;
   margin-inline-start: -16px;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: 130px;
+  color: var(--title-color);
   text-shadow: 4px 4px 0 #FF0070;
 }
 
-.header__container-text {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-}
-
 .header__text {
+  max-inline-size: 491px;
+  align-self: center;
+  justify-self: end;
+  margin-block-end: 77px;
   font-size: 18px;
   font-weight: 700;
-  max-inline-size: 491px;
+  background-color: var(--accent-color);
+  color: var(--article-title-color);
 }
 
 .section__why {
   display: grid;
   grid-template-columns: 1fr fit-content(649px);
   gap: 25px;
-  margin-block-end: 83px;
+  margin-block-end: 82px;
 }
 
 .section-title {
   font-size: 18px;
   font-weight: 700;
+  color: var(--section-title-color);
 }
 
 .section__why_article {
@@ -95,20 +126,31 @@ button {
 .article-title {
   font-size: 18px;
   line-height: 23px;
+  background-color: var(--accent-color);
+  color: var(--article-title-color);
 }
 
 .article-text {
   font-size: 18px;
-  margin-block-start: 11px;
   line-height: 23px;
+  color: var(--article-text-color);
+  margin-block-start: 11px;
 }
 
 .a {
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
+.a:hover {
+  border-bottom: 1px solid var(--article-text-color);
+}
+
 .a:focus {
   outline: none;
+}
+
+.a:focus-visible {
+  outline: 1px solid var(--article-text-color);
 }
 
 .section__what {
@@ -118,23 +160,22 @@ button {
   margin-block-end: 85px;
 }
 
-.container__what_section-title {
-  grid-column: 1 / span 3;
-  max-inline-size: 315px;
+.section__what_article {
+  grid-row-start: 2;
 }
 
 .section__how {
   display: grid;
   grid-template-columns: 1fr fit-content(648px);
+  align-items: start;
   gap: 25px;
   margin-block-end: 85px;
 }
 
 .section__how-title {
-  max-block-size: 23px;
+  grid-row: 1 / 3;
 }
 
-.container__how_article-title,
 .section__how_article {
   grid-column-start: 2;
 }
@@ -142,6 +183,8 @@ button {
 .caption {
   font-size: 18px;
   font-weight: 400;
+  background-color: var(--accent-color);
+  color: var(--article-title-color);
 }
 
 .section__how_article-advice:not(:first-child) {
@@ -150,6 +193,7 @@ button {
 
 .section__gallery {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
   'title title title'
   'sunset sunset icecream'
@@ -161,60 +205,52 @@ button {
 
 .section__gallery-title {
   grid-area: title;
+  background-color: var(--accent-color);
+  color: var(--article-title-color);
 }
 
-.img_sunset {
-  grid-area: sunset;
-  max-inline-size: 649px;
-}
-
-.img_icecream {
-  grid-area: icecream;
-  max-inline-size: 315px;
-  max-block-size: 595px;
+.gallery_img {
+  inline-size: 100%;
   block-size: 100%;
-}
-
-.img_tape {
-  grid-area: tape;
-  max-inline-size: 315px;
-  max-block-size: 768px;
-  block-size: 100%;
-}
-
-.img_books {
-  grid-area: books;
-  max-inline-size: 315px;
-}
-
-.img_street {
-  grid-area: street;
-  max-inline-size: 649px;
-}
-
-.img_sunset,
-.img_icecream,
-.img_tape,
-.img_books,
-.img_street {
   object-fit: cover;
   object-position: center;
 }
 
-.footer {
-  margin-block-start: 81px;
-  min-block-size: 768px;
-  max-block-size: 100vh;
+.img_sunset {
+  grid-area: sunset;
 }
 
-.footer__container_title {
-  display: flex;
+.img_icecream {
+  grid-area: icecream;
+}
+
+.img_tape {
+  grid-area: tape;
+}
+
+.img_books {
+  grid-area: books;
+}
+
+.img_street {
+  grid-area: street;
+}
+
+.footer {
+  display: grid;
+  min-block-size: 768px;
+  block-size: 100vh;
+  margin-block-start: 81px;
 }
 
 .footer__title {
+  margin-block-end: 38px;
+  align-self: center;
+  justify-self: center;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: 130px;
+  color: var(--title-color);
   text-shadow: 2px 2px 0 #FF0070;
-  margin: 262px auto;
 }
 
 @media (max-width: 768px) {
@@ -229,13 +265,9 @@ button {
     margin-block-start: 172px;
   }
   
-  .header__title {
-    margin-block-start: 145px;
-    margin-block-end: 136px;
-  }
-  
   .header__text {
     max-inline-size: 364px;
+    margin-block-end: 94px;
   }
   
   .section__why {
@@ -245,17 +277,18 @@ button {
   }
   
   .section__what {
-    grid-template-columns: minmax(728px, 1fr);
+    grid-template-columns: fit-content(728px);
     gap: 20px;
-    margin-block-end: 84px;
   }
   
-  .container__what_section-title {
+  .section-title-what {
     max-inline-size: 236px;
   }
-  
+
   .section__what_article {
     grid-column-start: 1;
+    grid-row-start: auto;
+    width: calc(100vw - 40px);
   }
   
   .section__how {
@@ -267,50 +300,20 @@ button {
   .section__how_article-advice:not(:first-child) {
     margin-top: 23px;
   }
-
-  .img_sunset {
-    max-inline-size: 479px;
-  }
-  
-  .img_icecream {
-    max-inline-size: 229px;
-    max-block-size: 441px;
-  }
-  
-  .img_tape {
-    max-inline-size: 229px;
-    max-block-size: 568px;
-  }
-  
-  .img_books {
-    max-inline-size: 230px;
-  }
-  
-  .img_street {
-    max-inline-size: 479px;
-  }
   
   .footer {
     min-block-size: 1024px;
   }
-  
-  .footer__title {
-    margin: 415px auto;
-  }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .page {
     padding: 10px;
   }
   
   .header {
     min-block-size: 668px;
-  }
-  
-  .decorated-zone {
-    max-block-size: 668px;
-    margin-block-end: 28px;
+    margin-block-end: 30px;
   }
 
   .decorated-zone::after {
@@ -329,11 +332,6 @@ button {
     line-height: 96px;
   }
   
-  .header__container-text {
-    justify-content: center;
-    margin-block-end: 98px;
-  }
-  
   .header__text {
     min-inline-size: 355px;
   }
@@ -349,31 +347,31 @@ button {
   }
 
   .section__what {
-    grid-template-columns: minmax(355px, 1fr);
-    gap: 24px;
-    margin-block-end: 52px;
+    grid-template-columns: fit-content(355px);
+    gap: 23px;
+    margin-block-end: 54px;
   }
   
-  .container__what_section-title {
+  .section-title-what {
     max-inline-size: 355px;
+  }
+
+  .section__what_article {
+    width: calc(100vw - 20px);
   }
   
   .section__how {
     grid-template-columns: fit-content(355px);
-    gap: 24px;
+    gap: 23px;
     margin-block-end: 54px;
   }
   
-  .section__how-title {
-    max-block-size: 70px;
-  }
-  
-  .container__how_article-title,
   .section__how_article {
     grid-column-start: 1;
   }
   
   .section__gallery {
+    grid-template-columns: 1fr;
     grid-template-areas:
     'title'
     'sunset'
@@ -384,23 +382,12 @@ button {
     gap: 10px;
   }
   
-  .section__gallery-title,
-  .img_sunset,
-  .img_icecream,
-  .img_tape,
-  .img_books,
-  .img_street {
-    max-inline-size: 355px;
-    inline-size: 100%;
-  }
-  
   .footer {
     min-block-size: 668px;
+    margin-block-start: 53px;
   }
-  .footer.decorated-zone {
-    margin-block-start: 51px;
-  }
+
   .footer__title {
-    margin: 245px 0;
+    margin-block-end: 27px;
   }
 }
