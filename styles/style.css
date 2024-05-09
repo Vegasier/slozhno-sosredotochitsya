@@ -2,7 +2,6 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  padding: 20px;
   margin: 0 auto;
 }
 
@@ -11,7 +10,7 @@
   grid-template-rows: 1fr min-content 1fr;
   min-block-size: 768px;
   block-size: 100vh;
-  margin-block-end: 40px;
+  margin-block: 20px 40px;
 }
 
 .decorated-zone {
@@ -27,13 +26,14 @@
 }
 
 .decorated-zone::before {
-  right: 1px;
+  right: 20px;
   border-block-start: 1px solid var(--rectangle-color);
   border-inline-end: 1px solid var(--rectangle-color);
 } 
 
 .decorated-zone::after {
   bottom: 40px;
+  left: 20px;
   border-block-end: 1px solid var(--rectangle-color);
   border-inline-start: 1px solid var(--rectangle-color);
 }
@@ -69,7 +69,7 @@ button {
 
 .header__rec {
   position: absolute;
-  right: 30px;
+  right: 47px;
   color: var(--rectangle-color);
   font-size: 18px;
 }
@@ -87,23 +87,27 @@ button {
 }
 
 .header__title {
-  margin-bottom: 33px;
-  margin-inline-start: -16px;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 130px;
   color: var(--title-color);
   text-shadow: 4px 4px 0 #FF0070;
+  margin-block-end: 33px;
 }
 
 .header__text {
   max-inline-size: 491px;
   align-self: center;
   justify-self: end;
+  margin-inline-end: 20px;
   margin-block-end: 77px;
   font-size: 18px;
   font-weight: 700;
   background-color: var(--accent-color);
   color: var(--article-title-color);
+}
+
+section {
+  margin-inline: 20px;
 }
 
 .section__why {
@@ -248,7 +252,6 @@ button {
   align-self: center;
   justify-self: center;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  line-height: 130px;
   color: var(--title-color);
   text-shadow: 2px 2px 0 #FF0070;
 }
@@ -262,6 +265,7 @@ button {
     flex-direction: column;
     gap: 11px;
     align-items: flex-end;
+    margin-inline-end: 20px;
     margin-block-start: 172px;
   }
   
@@ -272,13 +276,13 @@ button {
   
   .section__why {
     grid-template-columns: 1fr fit-content(472px);
-    gap: 27px;
+    gap: 25px;
     margin-block-end: 84px;
   }
   
   .section__what {
     grid-template-columns: fit-content(728px);
-    gap: 20px;
+    gap: 21px;
   }
   
   .section-title-what {
@@ -293,7 +297,7 @@ button {
   
   .section__how {
     grid-template-columns: 1fr fit-content(472px);
-    margin-block-end: 82px;
+    margin-block-end: 80px;
     gap: 20px;
   }
   
@@ -307,35 +311,46 @@ button {
 }
 
 @media (max-width: 375px) {
-  .page {
-    padding: 10px;
-  }
-  
   .header {
     min-block-size: 668px;
-    margin-block-end: 30px;
+    margin-block: 10px 29px;
+  }
+
+  .decorated-zone::before {
+    right: 10px;
   }
 
   .decorated-zone::after {
+    left: 10px;
     bottom: 20px;
   }
 
   .header__theme-menu-list {
-    margin-block-start: 65px;
+    margin-inline-end: 20px;
+    margin-block-start: 64px;
   }
   
+  .header__rec {
+    right: 39px;
+  }
+
   .header__title {
+    margin-inline-start: 10px;
     margin-block-start: 65px;
-    margin-block-end: 56px;
-    margin-inline-start: 0;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     line-height: 96px;
   }
   
   .header__text {
     min-inline-size: 355px;
+    margin-inline-start: 10px;
+    margin-block-start: 24px;
   }
   
+  section {
+    margin-inline: 10px;
+  }
+
   .section__why {
     grid-template-columns: fit-content(355px);
     gap: 24px;
@@ -363,7 +378,7 @@ button {
   .section__how {
     grid-template-columns: fit-content(355px);
     gap: 23px;
-    margin-block-end: 54px;
+    margin-block-end: 56px;
   }
   
   .section__how_article {
