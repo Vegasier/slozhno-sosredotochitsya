@@ -10,7 +10,8 @@
   grid-template-rows: 1fr min-content 1fr;
   min-block-size: 768px;
   block-size: 100vh;
-  margin-block: 20px 40px;
+  padding-block-start: 20px;
+  margin-block-end: 60px;
 }
 
 .decorated-zone {
@@ -26,13 +27,14 @@
 }
 
 .decorated-zone::before {
+  top: 20px;
   right: 20px;
   border-block-start: 1px solid var(--rectangle-color);
   border-inline-end: 1px solid var(--rectangle-color);
 } 
 
 .decorated-zone::after {
-  bottom: 40px;
+  bottom: 20px;
   left: 20px;
   border-block-end: 1px solid var(--rectangle-color);
   border-inline-start: 1px solid var(--rectangle-color);
@@ -69,7 +71,8 @@ button {
 
 .header__rec {
   position: absolute;
-  right: 47px;
+  top: 20px;
+  right: 49px;
   color: var(--rectangle-color);
   font-size: 18px;
 }
@@ -88,10 +91,9 @@ button {
 
 .header__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  line-height: 130px;
   color: var(--title-color);
   text-shadow: 4px 4px 0 #FF0070;
-  margin-block-end: 33px;
+  margin-block-end: 19px;
 }
 
 .header__text {
@@ -164,8 +166,9 @@ section {
   margin-block-end: 85px;
 }
 
-.section__what_article {
-  grid-row-start: 2;
+.section-title-what {
+  grid-column: 1 / span 3;
+  max-inline-size: 315px;
 }
 
 .section__how {
@@ -204,7 +207,6 @@ section {
   'tape books icecream'
   'tape street street';
   gap: 20px;
-  margin-block-start: 20px;
 }
 
 .section__gallery-title {
@@ -244,11 +246,10 @@ section {
   display: grid;
   min-block-size: 768px;
   block-size: 100vh;
-  margin-block-start: 81px;
+  margin-block-start: 61px;
 }
 
 .footer__title {
-  margin-block-end: 38px;
   align-self: center;
   justify-self: center;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -271,7 +272,7 @@ section {
   
   .header__text {
     max-inline-size: 364px;
-    margin-block-end: 94px;
+    margin-block-start: 7px;
   }
   
   .section__why {
@@ -291,7 +292,6 @@ section {
 
   .section__what_article {
     grid-column-start: 1;
-    grid-row-start: auto;
     width: calc(100vw - 40px);
   }
   
@@ -313,25 +313,27 @@ section {
 @media (max-width: 375px) {
   .header {
     min-block-size: 668px;
-    margin-block: 10px 29px;
+    margin-block-end: 39px;
   }
 
   .decorated-zone::before {
     right: 10px;
+    top: 10px;
   }
 
   .decorated-zone::after {
     left: 10px;
-    bottom: 20px;
+    bottom: 10px;
   }
 
   .header__theme-menu-list {
     margin-inline-end: 20px;
-    margin-block-start: 64px;
+    margin-block-start: 54px;
   }
   
   .header__rec {
-    right: 39px;
+    right: 38px;
+    top: 10px;
   }
 
   .header__title {
@@ -344,7 +346,7 @@ section {
   .header__text {
     min-inline-size: 355px;
     margin-inline-start: 10px;
-    margin-block-start: 24px;
+    margin-block-start: 38px;
   }
   
   section {
@@ -399,10 +401,6 @@ section {
   
   .footer {
     min-block-size: 668px;
-    margin-block-start: 53px;
-  }
-
-  .footer__title {
-    margin-block-end: 27px;
+    margin-block-start: 43px;
   }
 }
