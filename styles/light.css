@@ -35,9 +35,11 @@
   --rectangle-color: #353430;
   --accent-color: #FF8DCB;
   }
+
   .page {
     background: #FFF1F7 url('../images/cover-image-light.png') fixed center/cover no-repeat;
   }
+  
   .header__rec {
     display: none;
   }

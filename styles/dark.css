@@ -20,5 +20,6 @@
   background: #000028 url('../images/cover-image-dark.png') fixed center/cover no-repeat;
 }
 
-/* Благодарю за подробное объяснение!
-Теперь всё стало понятно. */
+.page.theme_dark .header__rec {
+  display: block;
+}
